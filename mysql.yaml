@@ -1,5 +1,7 @@
 - name: configure mysql server
   hosts: mysql
-  become: yes
+  become: yes # the root is in remote server as mysql is a remote server
+  vars_files:
+  - /var/expense/credentials_mysql.yaml #this is in ansible server , so there is issue while using vault
   roles:
   - mysql
