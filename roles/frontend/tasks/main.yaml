@@ -27,8 +27,8 @@
       remote_src: yes     
 
   - name: copy expene conf
-    ansible.builtin.copy:
-      src: expense.conf
+    ansible.builtin.template:
+      src: expense.j2
       dest: /etc/nginx/default.d/expense.conf
 
   - name: restart nginx
